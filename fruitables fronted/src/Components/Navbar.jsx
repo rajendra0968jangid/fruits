@@ -1,6 +1,8 @@
-import React from "react";
-
+import React, { useState } from "react";
 function Navbar() {
+  const [url,setUrl] = useState(window.location.pathname)
+  
+  
   return (
     <>
       <div className="container-fluid fixed-top">
@@ -35,7 +37,7 @@ function Navbar() {
         </div>
         <div className="container px-0">
           <nav className="navbar navbar-light bg-white navbar-expand-xl">
-            <a href="index.html" className="navbar-brand">
+            <a href="/" className="navbar-brand">
               <h1 className="text-primary display-6">Fruitables</h1>
             </a>
             <button
@@ -51,13 +53,13 @@ function Navbar() {
               id="navbarCollapse"
             >
               <div className="navbar-nav mx-auto">
-                <a href="index.html" className="nav-item nav-link active">
+                <a href="/" className={`nav-item nav-link ${(url=="/")?"active":""}`}>
                   Home
                 </a>
-                <a href="shop.html" className="nav-item nav-link">
+                <a href="/shop" className={`nav-item nav-link ${(url == "/shop")?"active":""}` }>
                   Shop
                 </a>
-                <a href="shop-detail.html" className="nav-item nav-link">
+                <a href="/shopdetail" className="nav-item nav-link">
                   Shop Detail
                 </a>
                 <div className="nav-item dropdown">
@@ -69,21 +71,21 @@ function Navbar() {
                     Pages
                   </a>
                   <div className="dropdown-menu m-0 bg-secondary rounded-0">
-                    <a href="cart.html" className="dropdown-item">
+                    <a href="/cart" className="dropdown-item">
                       Cart
                     </a>
-                    <a href="chackout.html" className="dropdown-item">
+                    <a href="/checkout" className="dropdown-item">
                       Chackout
                     </a>
-                    <a href="testimonial.html" className="dropdown-item">
+                    <a href="/testimonial" className="dropdown-item">
                       Testimonial
                     </a>
-                    <a href="404.html" className="dropdown-item">
+                    <a href="/404" className="dropdown-item">
                       404 Page
                     </a>
                   </div>
                 </div>
-                <a href="contact.html" className="nav-item nav-link">
+                <a href="/contact" className={`nav-item nav-link ${(url=="/contact")?"active":""}`}>
                   Contact
                 </a>
               </div>

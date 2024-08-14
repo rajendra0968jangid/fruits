@@ -1,9 +1,20 @@
-import React from 'react';
-
+import React from "react";
+import Navbar from "../Components/Navbar";
+import CartPage from "../Components/CartPage";
+import Footer from "../Components/Footer";
+import SinglePageHeader from "../Components/SinglePageHeader";
 function Cart() {
   return (
     <>
-      <h1>Cart</h1>
+      {/* navbar */}
+      <Navbar />
+      {/* single page header */}
+      <SinglePageHeader />
+      {/* <BannerSection /> */}
+      {/* cartpage */}
+      <CartPage />
+      {/* footer  */}
+      <Footer />
     </>
   );
 }

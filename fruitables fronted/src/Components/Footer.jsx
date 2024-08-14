@@ -1,5 +1,5 @@
 import React from "react";
-
+import CopyRight from "./CopyRight";
 function Footer() {
   return (
     <>
@@ -138,6 +138,7 @@ function Footer() {
           </div>
         </div>
       </div>
+      <CopyRight/>
     </>
   );
 }
