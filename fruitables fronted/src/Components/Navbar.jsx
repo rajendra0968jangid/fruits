@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 function Navbar() {
   const [url,setUrl] = useState(window.location.pathname)
-  
-  
   return (
     <>
       <div className="container-fluid fixed-top">
@@ -59,7 +57,7 @@ function Navbar() {
                 <a href="/shop" className={`nav-item nav-link ${(url == "/shop")?"active":""}` }>
                   Shop
                 </a>
-                <a href="/shopdetail" className="nav-item nav-link">
+                <a href="/shopdetail" className={`nav-item nav-link ${(url == "/shopdetail")?"active":""}`}>
                   Shop Detail
                 </a>
                 <div className="nav-item dropdown">
