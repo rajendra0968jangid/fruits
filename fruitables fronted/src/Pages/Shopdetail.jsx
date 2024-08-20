@@ -8,7 +8,7 @@ function Shopdetail() {
     <>
       {/* navbar */}
       <Navbar />
-
+      <SinglePageHeader one={{title:"Shop Detail"}}/>
       <h1>Shop detail</h1>
       <Footer />
     </>

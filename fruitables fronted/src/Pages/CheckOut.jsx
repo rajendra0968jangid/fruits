@@ -8,8 +8,8 @@ function CheckOut() {
     <>
       {/* navbar */}
       <Navbar />
-
-      <h1>Checkout</h1>
+      <SinglePageHeader one={{title:"Checkout"}}/>
+      {/* <h1>Checkout</h1> */}
       <Footer />
     </>
   );

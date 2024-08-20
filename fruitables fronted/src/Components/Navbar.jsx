@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 function Navbar() {
   const [url,setUrl] = useState(window.location.pathname)
+  let [cartData,setCartData]= useState(JSON.parse(localStorage.getItem('cartData'))||0)
   return (
     <>
       <div className="container-fluid fixed-top">
@@ -101,7 +102,7 @@ function Navbar() {
                     className="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
                     style={{ top: "-5px", left: 15, height: 20, minWidth: 20 }}
                   >
-                    3
+                    {cartData.length||0}
                   </span>
                 </a>
                 <a href="#" className="my-auto">

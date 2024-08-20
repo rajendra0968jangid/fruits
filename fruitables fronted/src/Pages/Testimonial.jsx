@@ -8,8 +8,8 @@ function Testimonial() {
     <>
       {/* navbar */}
       <Navbar />
-
-      <h1>Testimonial</h1>
+      <SinglePageHeader one={{title:"Testimonial"}}/>
+      {/* <h1>Testimonial</h1> */}
       <Footer />
     </>
   );

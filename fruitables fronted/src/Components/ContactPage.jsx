@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
 function ContactPage() {
+  let [formData, setFormData] = useState({ name: "", email: "", message: "" })
+  const hanldleChange = async (e) => {
+    const { name, value } = e.target
+    let data = { ...formData, [name]: value }
+    setFormData(data)
+    //api
+  }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log(formData);
+    const response = await fetch("http://localhost:3000/contact/insert", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+    const jsonResponse = await response.json()
+    console.log(jsonResponse)
+    window.alert(jsonResponse["message"])
+  }
   return (
     <>
       <div className="container-fluid contact py-5">
@@ -34,20 +55,29 @@ function ContactPage() {
                 </div>
               </div>
               <div className="col-lg-7">
-                <form action="" className="">
+                <form onSubmit={handleSubmit}>
                   <input
                     type="text"
+                    name="name"
                     className="w-100 form-control border-0 py-3 mb-4"
                     placeholder="Your Name"
+                    value={formData["name"]}
+                    onChange={(e) => hanldleChange(e)}
                   />
                   <input
                     type="email"
+                    name="email"
                     className="w-100 form-control border-0 py-3 mb-4"
                     placeholder="Enter Your Email"
+                    value={formData["email"]}
+                    onChange={(e) => hanldleChange(e)}
                   />
                   <textarea
                     className="w-100 form-control border-0 mb-4"
                     rows={5}
+                    name="message"
+                    value={formData["message"]}
+                    onChange={(e) => hanldleChange(e)}
                     cols={10}
                     placeholder="Your Message"
                     defaultValue={""}
