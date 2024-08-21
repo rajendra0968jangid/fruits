@@ -12,7 +12,8 @@ function FruitShopFilter() {
     apiFetch()
   }, [])
   const handleCart = (card)=>{
-    cartData.push(card)
+    let addKey = {...card,quantity:1}
+    cartData.push(addKey)
     setCartData(cartData)
     localStorage.setItem('cartData',JSON.stringify(cartData))
   }

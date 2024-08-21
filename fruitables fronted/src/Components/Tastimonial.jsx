@@ -9,7 +9,7 @@ function Tastimonial() {
             <h4 className="text-primary">Our Testimonial</h4>
             <h1 className="display-5 mb-5 text-dark">Our Client Saying!</h1>
           </div>
-          <div className="owl-carousel testimonial-carousel">
+          <div className="testimonial-carousel">
             <div className="testimonial-item img-border-radius bg-light rounded p-4">
               <div className="position-relative">
                 <i

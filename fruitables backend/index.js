@@ -13,6 +13,7 @@ app.use(cors({
 
 app.get('/product/alldata', (req, res) => {
   let data = [{
+    id:1,
     type: "Fruits",
     fName: "Grapes",
     fTitle:
@@ -20,6 +21,7 @@ app.get('/product/alldata', (req, res) => {
     fPrice: 4.99,
     fImage: "img/fruite-item-5.jpg",
   }, {
+    id:2,
     type: "Fruits",
     fName: "Grapes",
     fTitle:
@@ -27,6 +29,7 @@ app.get('/product/alldata', (req, res) => {
     fPrice: 5.99,
     fImage: "img/fruite-item-5.jpg",
   }, {
+    id:3,
     type: "Fruits",
     fName: "Raspberries",
     fTitle:
@@ -34,6 +37,7 @@ app.get('/product/alldata', (req, res) => {
     fPrice: 4.99,
     fImage: "img/fruite-item-2.jpg",
   }, {
+    id:4,
     type: "Fruits",
     fName: "Apricots",
     fTitle:
@@ -41,6 +45,7 @@ app.get('/product/alldata', (req, res) => {
     fPrice: 4.99,
     fImage: "img/fruite-item-4.jpg",
   }, {
+    id:5,
     type: "Fruits",
     fName: "Banana",
     fTitle:
@@ -48,6 +53,7 @@ app.get('/product/alldata', (req, res) => {
     fPrice: 4.99,
     fImage: "img/fruite-item-3.jpg",
   }, {
+    id:6,
     type: "Fruits",
     fName: "Oranges",
     fTitle:
@@ -55,6 +61,7 @@ app.get('/product/alldata', (req, res) => {
     fPrice: 4.99,
     fImage: "img/fruite-item-1.jpg",
   }, {
+    id:7,
     type: "Fruits",
     fName: "Grapes",
     fTitle:
@@ -62,6 +69,7 @@ app.get('/product/alldata', (req, res) => {
     fPrice: 4.99,
     fImage: "img/fruite-item-5.jpg",
   }, {
+    id:8,
     type: "Fruits",
     fName: "Raspberries",
     fTitle:
@@ -69,7 +77,7 @@ app.get('/product/alldata', (req, res) => {
     fPrice: 4.99,
     fImage: "img/fruite-item-2.jpg",
   }]
-  res.json({ data: data });
+  res.status(200).json({ data: data });
 })
 
 app.post('/contact/insert', (req, res) => {
