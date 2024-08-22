@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 function CartPage() {
-  let [cartData, setCartData] = useState(JSON.parse(localStorage.getItem('cartData')))
+  let [cartData, setCartData] = useState(JSON.parse(localStorage.getItem('cartData')) || [])
+
   let [cartSum, setCartSum] = useState(0)
-  
-  let [coupon, setCoupon] = useState({ discount: 2.1, coupon: "hello" })
+
+  let [coupon, setCoupon] = useState({ discount: 2.1, name: "hello" })
   let [discount, setDiscount] = useState({ name: "" })
   let [showDiscount, setShowDiscount] = useState({ price: 0 })
 
@@ -31,17 +32,22 @@ function CartPage() {
   }
 
   const handleSubtract = (product) => {
-    let obj1 = { ...product, quantity: product["quantity"] - 1 }
-    let previousOrNew = []
-    for (let i = 0; i < cartData.length; i++) {
-      if (cartData[i]["id"] == obj1["id"]) {
-        previousOrNew[i] = obj1;
+    if (product["quantity"] > 1) {
+      let obj1 = { ...product, quantity: product["quantity"] - 1 }
+      let previousOrNew = []
+      for (let i = 0; i < cartData.length; i++) {
+        if (cartData[i]["id"] == obj1["id"]) {
+          previousOrNew[i] = obj1;
+        }
+        else {
+          previousOrNew[i] = cartData[i]
+        }
       }
-      else {
-        previousOrNew[i] = cartData[i]
-      }
+      setCartData(previousOrNew)
     }
-    setCartData(previousOrNew)
+    else {
+      handleRemove(product)
+    }
   }
 
   const handleRemove = (product) => {
@@ -54,7 +60,7 @@ function CartPage() {
     setCartData(previousOrNew)
   }
   const handleDiscount = () => {
-    if (discount["name"] == coupon["coupon"]) {
+    if (discount["name"] == coupon["name"]) {
       setShowDiscount({ price: coupon["discount"] })
     }
   }

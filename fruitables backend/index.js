@@ -85,6 +85,11 @@ app.post('/contact/insert', (req, res) => {
   console.log(data)
   res.json({ data: "", message: "Data inserted successfully" })
 })
+app.post('/checkout/insert', (req, res) => {
+  const data = req.body;
+  console.log(data)
+  res.json({ data: "", message: "Data inserted successfully" })
+})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

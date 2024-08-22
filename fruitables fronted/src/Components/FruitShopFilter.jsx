@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function FruitShopFilter() {
   let [cardData, setCardData] = useState([])
-  let [cartData,setCartData] = useState(JSON.parse(localStorage.getItem("cartData"))||[])
+  let [cartData, setCartData] = useState(JSON.parse(localStorage.getItem("cartData")) || [])
   useEffect(() => {
     const apiFetch = async () => {
       const response = await fetch("http://localhost:3000/product/alldata")
@@ -11,11 +11,14 @@ function FruitShopFilter() {
     }
     apiFetch()
   }, [])
-  const handleCart = (card)=>{
-    let addKey = {...card,quantity:1}
+  const handleCart = (card) => {
+    // console.log(card);
+
+    let addKey = { ...card, quantity: 1 }
+    // let previousOrNew = [...cartData,addKey]
     cartData.push(addKey)
-    setCartData(cartData)
-    localStorage.setItem('cartData',JSON.stringify(cartData))
+    setCartData(cardData)
+    localStorage.setItem('cartData', JSON.stringify(cartData))
   }
   return (
     <>
@@ -338,7 +341,7 @@ function FruitShopFilter() {
                               <a
                                 href="#"
                                 className="btn border border-secondary rounded-pill px-3 text-primary"
-                                onClick={()=>handleCart(item)}
+                                onClick={() => handleCart(item)}
                               >
                                 <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
                                 Add to cart
