@@ -5,7 +5,7 @@ function FruitShopFilter() {
   let [cartData, setCartData] = useState(JSON.parse(localStorage.getItem("cartData")) || [])
   useEffect(() => {
     const apiFetch = async () => {
-      const response = await fetch("http://localhost:3000/product/alldata")
+      const response = await fetch("http://localhost:8800/product/alldata")
       const jsonResponse = await response.json()
       setCardData(jsonResponse["data"])
     }

@@ -14,7 +14,7 @@ function CheckOutPage() {
   const handleSubmit = async () => {
     let obj = { data: cartData, formData: formData, subTotal: subTotal };
     //api call
-    const response = await fetch("http://localhost:3000/checkout/insert", {
+    const response = await fetch("http://localhost:8800/checkout/insert", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

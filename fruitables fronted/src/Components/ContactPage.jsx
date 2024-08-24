@@ -11,7 +11,7 @@ function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(formData);
-    const response = await fetch("http://localhost:3000/contact/insert", {
+    const response = await fetch("http://localhost:8800/contact/insert", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
