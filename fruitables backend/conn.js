@@ -23,6 +23,14 @@ const productSchema = new Schema({
     fPrice: Number,
     fImage: String,
 });
-const Product = mongoose.model('Product', productSchema);
+const userSchema=new Schema({
+    name: String,
+    email:String,
+    phone:String,
+    password:String
+})
 
-module.exports = { Contact, Product }
+const Product = mongoose.model('Product', productSchema);
+const User = mongoose.model('User', userSchema);
+
+module.exports = { Contact, Product,User }

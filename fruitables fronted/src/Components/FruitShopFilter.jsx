@@ -3,6 +3,26 @@ import React, { useEffect, useState } from "react";
 function FruitShopFilter() {
   let [cardData, setCardData] = useState([])
   let [cartData, setCartData] = useState(JSON.parse(localStorage.getItem("cartData")) || [])
+  let [name,setName]=useState("")
+  const handleInput =(e)=>{
+    setName(e.target["value"])
+  }
+  const handleSearch =async()=>{
+    // const apiFetch=async ()=>{
+    // }
+    // apiFetch()
+    const response= await fetch("http://localhost:8800/shop/search",{
+      method:'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({name:name}),
+    })
+    const jsonrespo=await response.json();
+    // console.log(jsonrespo);
+    setCardData(jsonrespo["data"])
+
+  }
   useEffect(() => {
     const apiFetch = async () => {
       const response = await fetch("http://localhost:8800/product/alldata")
@@ -35,8 +55,10 @@ function FruitShopFilter() {
                       className="form-control p-3"
                       placeholder="keywords"
                       aria-describedby="search-icon-1"
+                      value={name}
+                      onChange={(e)=>(handleInput(e))}
                     />
-                    <span id="search-icon-1" className="input-group-text p-3">
+                    <span onClick={handleSearch} id="search-icon-1" className="input-group-text p-3" >
                       <i className="fa fa-search" />
                     </span>
                   </div>
