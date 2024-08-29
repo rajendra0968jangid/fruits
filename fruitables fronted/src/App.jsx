@@ -13,6 +13,7 @@ import Testimonial from "./Pages/Testimonial";
 import Shopdetail from "./Pages/Shopdetail";
 import Signup from "./Pages/Signup";
 import SignIn from "./Pages/SignIn";
+import Profile from "./Pages/Profile";
 function App() {
   return (
     <>
@@ -28,6 +29,7 @@ function App() {
           <Route path="/shopdetail" element={<Shopdetail />} />
 
           <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/signin" element={<SignIn />} />
         </Routes>
       </BrowserRouter>

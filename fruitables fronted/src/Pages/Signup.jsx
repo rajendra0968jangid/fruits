@@ -2,17 +2,19 @@ import React, { useState } from 'react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import SinglePageHeader from '../Components/SinglePageHeader'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Signup() {
     let [obj, setObj] = useState({ name: "", email: "", phone: "", password: "", confirmpw: "" })
-    const handleChange = async(e) => {
-        const {name, value}=e.target
-        let data={...obj,[name]:value}
+    const navigate = useNavigate();
+    let [error, setError] = useState({ message: "" })
+    const handleChange = async (e) => {
+        const { name, value } = e.target
+        let data = { ...obj, [name]: value }
         setObj(data)
         console.log(data);
-        
-        
+
+
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,7 +28,9 @@ function Signup() {
         const jsonreso = await respo.json()
         console.log(jsonreso);
         window.alert(jsonreso["message"])
-
+        if(jsonreso["message"] == "created"){
+            navigate("/signin")
+        }
     }
 
     return (
@@ -35,6 +39,7 @@ function Signup() {
             <SinglePageHeader one={{ title: "SignUp" }} />
             <div>
                 <h1>SignUp</h1>
+                <p className='text-danger'>{error["message"]}</p>
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"

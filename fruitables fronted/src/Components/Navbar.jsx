@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 function Navbar() {
-  const [url,setUrl] = useState(window.location.pathname)
-  let [cartData,setCartData]= useState(JSON.parse(localStorage.getItem('cartData'))||0)
+  const [url, setUrl] = useState(window.location.pathname)
+  let [cartData, setCartData] = useState(JSON.parse(localStorage.getItem('cartData')) || 0)
+  let [userData, setUserData] = useState(JSON.parse(localStorage.getItem('userData')) || 0)
   return (
     <>
       <div className="container-fluid fixed-top">
@@ -52,13 +54,13 @@ function Navbar() {
               id="navbarCollapse"
             >
               <div className="navbar-nav mx-auto">
-                <a href="/" className={`nav-item nav-link ${(url=="/")?"active":""}`}>
+                <a href="/" className={`nav-item nav-link ${(url == "/") ? "active" : ""}`}>
                   Home
                 </a>
-                <a href="/shop" className={`nav-item nav-link ${(url == "/shop")?"active":""}` }>
+                <a href="/shop" className={`nav-item nav-link ${(url == "/shop") ? "active" : ""}`}>
                   Shop
                 </a>
-                <a href="/shopdetail" className={`nav-item nav-link ${(url == "/shopdetail")?"active":""}`}>
+                <a href="/shopdetail" className={`nav-item nav-link ${(url == "/shopdetail") ? "active" : ""}`}>
                   Shop Detail
                 </a>
                 <div className="nav-item dropdown">
@@ -84,7 +86,7 @@ function Navbar() {
                     </a>
                   </div>
                 </div>
-                <a href="/contact" className={`nav-item nav-link ${(url=="/contact")?"active":""}`}>
+                <a href="/contact" className={`nav-item nav-link ${(url == "/contact") ? "active" : ""}`}>
                   Contact
                 </a>
               </div>
@@ -102,13 +104,26 @@ function Navbar() {
                     className="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
                     style={{ top: "-5px", left: 15, height: 20, minWidth: 20 }}
                   >
-                    {cartData.length||0}
+                    {cartData.length || 0}
                   </span>
                 </a>
-                <a href="#" className="my-auto">
-                  <i className="fas fa-user fa-2x" />
-                </a>
+                {userData ? (
+                  <Link to="/profile" className="my-auto">
+                    <i className="fas fa-user fa-2x" />
+                  </Link>
+                ) : (
+                  <Link to="/signin">
+                    <button
+                      type="submit"
+                      className="btn btn-primary border-2 border-secondary rounded-pill text-white h-100"
+                      style={{ top: 0, right: "25%" }}
+                    >
+                      Sign in
+                    </button>
+                  </Link>
+                )}
               </div>
+
             </div>
           </nav>
         </div>

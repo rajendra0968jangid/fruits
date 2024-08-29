@@ -1,10 +1,10 @@
 require("dotenv").config()
 const express = require('express')
 const app = express()
-const port = process.env.PORT||8800
+const port = process.env.PORT || 8800
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const { Contact, Product,User } = require("./conn")
+const { Contact, Product, User } = require("./conn")
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
@@ -24,7 +24,7 @@ app.post('/contact/insert', async (req, res) => {
   const data = req.body;
   // console.log(data)
   // insert data in data base
-  const newUser  = await User.create(data);
+  const newUser = await User.create(data);
   const saveUser = await newUser.save()
   res.json({ data: "", message: "Data inserted successfully" })
 })
@@ -35,26 +35,35 @@ app.post('/checkout/insert', (req, res) => {
   // const saveContact = await newContact.save()
   res.json({ data: "", message: "Data inserted successfully" })
 })
-app.post('/shop/search',async(req,res)=>{
-  const data =req.body;
+app.post('/shop/search', async (req, res) => {
+  const data = req.body;
   // console.log(data);
-  let searchdata = await Product.find({fName:data["name"]})
-  res.json({message:"data",data:searchdata})
+  let searchdata = await Product.find({ fName: data["name"] })
+  res.json({ message: "data", data: searchdata })
 
 })
-app.post('/signin/user',async(req,res)=>{
-  const data=req.body;
+app.post('/signin/user', async (req, res) => {
+  const data = req.body;
   console.log(data);
-  
-  res.json({message:"created"})
+  const existingUser = await User.findOne({ email: data["email"], password: data["password"] })
+  if (existingUser) {
+    return res.json({data:existingUser, message: "User login successfully" })
+  }
+  res.json({ message: "User credentials invalid" })
 })
-app.post('/signup/user',async(req,res)=>{
-  const data=req.body;
+app.post('/signup/user', async (req, res) => {
+  const data = req.body;
+  const existingUser = await User.findOne({ email: data["email"] })
+  if (existingUser) {
+    return res.json({ message: "User already exist" })
+  }
   console.log(data);
-  const newContact  = await Contact.create(data);
+  if (data["password"] != data["confirmpw"]) {
+    return res.json({ message: "Password mismatch" })
+  }
+  const newContact = await User.create(data);
   const saveContact = await newContact.save()
-  
-  res.json({message:"created"})
+  res.json({ message: "created" })
 })
 
 app.listen(port, () => {
