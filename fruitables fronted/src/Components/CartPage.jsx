@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function CartPage() {
   let [cartData, setCartData] = useState(JSON.parse(localStorage.getItem('cartData')) || [])
@@ -180,14 +181,16 @@ function CartPage() {
                 </div>
                 <div className="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
                   <h5 className="mb-0 ps-4 me-4">Total</h5>
-                  <p className="mb-0 pe-4">$99.00</p>
+                  <p className="mb-0 pe-4">${cartSum - showDiscount["price"]}</p>
                 </div>
-                <button
-                  className="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
-                  type="button"
-                >
-                  Proceed Checkout
-                </button>
+                <Link to="/checkout">
+                  <button
+                    className="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
+                    type="button"
+                  >
+                    Proceed Checkout
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

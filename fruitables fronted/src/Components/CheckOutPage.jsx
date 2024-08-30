@@ -22,6 +22,7 @@ function CheckOutPage() {
       body: JSON.stringify(obj),
     })
     const jsonResponse = await response.json();
+    localStorage.removeItem("cartData")
     
   }
   const handleChange = (e) => {
