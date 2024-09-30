@@ -10,10 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use(cors({
-  origin: 'http://localhost:5173',
-  optionsSuccessStatus: 200
-}))
+app.use(cors())
 
 app.get('/product/alldata', async (req, res) => {
   let data = [
