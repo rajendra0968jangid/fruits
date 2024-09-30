@@ -1,7 +1,17 @@
-import React from "react";
+import React, { act, useEffect, useState } from "react";
 import CardFruitShop from "./CardFruitShop";
 
 function FruitShop() {
+  let [cardData, setCardData] = useState([])
+  useEffect(() => {
+    const apiFetch = async () => {
+      const url = import.meta.env.VITE_BACKEND_URL
+      const response = await fetch(url+"/product/alldata")
+      const jsonResponse = await response.json()
+      setCardData(jsonResponse["data"])
+    }
+    apiFetch()
+  }, [])
   return (
     <>
       <div className="container-fluid fruite py-5">
@@ -76,89 +86,12 @@ function FruitShop() {
                 <div className="row g-4">
                   <div className="col-lg-12">
                     <div className="row g-4">
-                      <CardFruitShop
-                        one={{
-                          type: "Fruits",
-                          fName: "Grapes",
-                          fTitle:
-                            "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-                          fPrice: 4.99,
-                          fImage: "img/fruite-item-5.jpg",
-                        }}
-                      />
+                      {cardData.map((item, index) => (
                         <CardFruitShop
-                        one={{
-                          type: "Fruits",
-                          fName: "Grapes",
-                          fTitle:
-                            "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-                          fPrice: 5.99,
-                          fImage: "img/fruite-item-5.jpg",
-                        }}
-                      />
-                        <CardFruitShop
-                        one={{
-                          type: "Fruits",
-                          fName: "Raspberries",
-                          fTitle:
-                            "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-                          fPrice: 4.99,
-                          fImage: "img/fruite-item-2.jpg",
-                        }}
-                      />
-                        <CardFruitShop
-                        one={{
-                          type: "Fruits",
-                          fName: "Apricots",
-                          fTitle:
-                            "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-                          fPrice: 4.99,
-                          fImage: "img/fruite-item-4.jpg",
-                        }}
-                      />
-                        <CardFruitShop
-                        one={{
-                          type: "Fruits",
-                          fName: "Banana",
-                          fTitle:
-                            "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-                          fPrice: 4.99,
-                          fImage: "img/fruite-item-3.jpg",
-                        }}
-                      />
-                        <CardFruitShop
-                        one={{
-                          type: "Fruits",
-                          fName: "Oranges",
-                          fTitle:
-                            "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-                          fPrice: 4.99,
-                          fImage: "img/fruite-item-1.jpg",
-                        }}
-                      />
-                        <CardFruitShop
-                        one={{
-                          type: "Fruits",
-                          fName: "Grapes",
-                          fTitle:
-                            "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-                          fPrice: 4.99,
-                          fImage: "img/fruite-item-5.jpg",
-                        }}
-                      />
-                        <CardFruitShop
-                        one={{
-                          type: "Fruits",
-                          fName: "Raspberries",
-                          fTitle:
-                            "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-                          fPrice: 4.99,
-                          fImage: "img/fruite-item-2.jpg",
-                        }}
-                      />
-
-                      
-
+                          key={index}
+                          one={item}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -229,7 +162,7 @@ function FruitShop() {
                                 $4.99 / kg
                               </p>
                               <a
-                              
+
                                 href="#"
                                 className="btn border border-secondary rounded-pill px-3 text-primary"
                               >

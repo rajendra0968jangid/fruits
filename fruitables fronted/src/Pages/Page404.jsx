@@ -8,7 +8,8 @@ function Page404() {
     <>
       {/* navbar */}
       <Navbar />
-      <h1>404</h1>
+      <SinglePageHeader one={{title:"404 Error"}}/>
+      {/* <h1>404</h1> */}
       <Footer />
     </>
   );

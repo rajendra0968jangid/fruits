@@ -5,6 +5,7 @@ import SinglePageHeader from '../Components/SinglePageHeader'
 import { Link, useNavigate } from 'react-router-dom'
 
 function Signup() {
+    const url = import.meta.env.VITE_BACKEND_URL
     let [obj, setObj] = useState({ name: "", email: "", phone: "", password: "", confirmpw: "" })
     const navigate = useNavigate();
     let [error, setError] = useState({ message: "" })
@@ -18,7 +19,7 @@ function Signup() {
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const respo = await fetch("http://localhost:8800/signup/user", {
+        const respo = await fetch(url + "/signup/user", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -28,7 +29,7 @@ function Signup() {
         const jsonreso = await respo.json()
         console.log(jsonreso);
         window.alert(jsonreso["message"])
-        if(jsonreso["message"] == "created"){
+        if (jsonreso["message"] == "created") {
             navigate("/signin")
         }
     }

@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function CheckOutPage() {
+  const url = import.meta.env.VITE_BACKEND_URL
+  let [cartData, setCartData] = useState(JSON.parse(localStorage.getItem('cartData')) || [])
+  let [subTotal, setSubTotal] = useState(0)
+  let [formData, setFormData] = useState({ firstName: "", lastName: "", address: "", city: "", country: "", zip: 0, mobile: 0, orderNote: "" })
+  useEffect(() => {
+    let sum = 0
+    for (let i = 0; i < cartData.length; i++) {
+      sum += cartData[i]["fPrice"] * cartData[i]["quantity"]
+    }
+    setSubTotal(sum)
+  }, [])
+  const handleSubmit = async () => {
+    let obj = { data: cartData, formData: formData, subTotal: subTotal };
+    //api call
+    const response = await fetch(url+"/checkout/insert", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    })
+    const jsonResponse = await response.json();
+    localStorage.removeItem("cartData")
+    
+  }
+  const handleChange = (e) => {
+    let name = e["target"]["name"]
+    let value = e["target"]["value"]
+    let previousOrNew = { ...formData, [name]: value }
+    setFormData(previousOrNew)
+  }
+
   return (
     <>
       <div className="container-fluid py-5">
@@ -15,7 +47,7 @@ function CheckOutPage() {
                       <label className="form-label my-3">
                         First Name<sup>*</sup>
                       </label>
-                      <input type="text" className="form-control" />
+                      <input type="text" className="form-control" value={formData["firstName"]} onChange={(e) => handleChange(e)} name="firstName" />
                     </div>
                   </div>
                   <div className="col-md-12 col-lg-6">
@@ -23,22 +55,25 @@ function CheckOutPage() {
                       <label className="form-label my-3">
                         Last Name<sup>*</sup>
                       </label>
-                      <input type="text" className="form-control" />
+                      <input type="text" onChange={(e) => handleChange(e)} className="form-control" value={formData["lastName"]} name="lastName" />
                     </div>
                   </div>
                 </div>
                 <div className="form-item">
-                  <label className="form-label my-3">
+                  {/* <label className="form-label my-3">
                     Company Name<sup>*</sup>
                   </label>
-                  <input type="text" className="form-control" />
+                  <input type="text" className="form-control" /> */}
                 </div>
                 <div className="form-item">
                   <label className="form-label my-3">
                     Address <sup>*</sup>
                   </label>
                   <input
+                    value={formData["address"]}
+                    onChange={(e) => handleChange(e)}
                     type="text"
+                    name="address"
                     className="form-control"
                     placeholder="House Number Street Name"
                   />
@@ -47,27 +82,27 @@ function CheckOutPage() {
                   <label className="form-label my-3">
                     Town/City<sup>*</sup>
                   </label>
-                  <input type="text" className="form-control" />
+                  <input type="text" className="form-control" name="city" value={formData["city"]} onChange={(e) => handleChange(e)} />
                 </div>
                 <div className="form-item">
                   <label className="form-label my-3">
                     Country<sup>*</sup>
                   </label>
-                  <input type="text" className="form-control" />
+                  <input type="text" className="form-control" name="country" value={formData["country"]} onChange={(e) => handleChange(e)} />
                 </div>
                 <div className="form-item">
                   <label className="form-label my-3">
                     Postcode/Zip<sup>*</sup>
                   </label>
-                  <input type="text" className="form-control" />
+                  <input type="text" className="form-control" name="zip" value={formData["zip"]} onChange={(e) => handleChange(e)} />
                 </div>
                 <div className="form-item">
                   <label className="form-label my-3">
                     Mobile<sup>*</sup>
                   </label>
-                  <input type="tel" className="form-control" />
+                  <input type="tel" className="form-control" name="mobile" value={formData["mobile"]} onChange={(e) => handleChange(e)} />
                 </div>
-                <div className="form-item">
+                {/* <div className="form-item">
                   <label className="form-label my-3">
                     Email Address<sup>*</sup>
                   </label>
@@ -84,9 +119,9 @@ function CheckOutPage() {
                   <label className="form-check-label" htmlFor="Account-1">
                     Create an account?
                   </label>
-                </div>
+                </div> */}
                 <hr />
-                <div className="form-check my-3">
+                {/* <div className="form-check my-3">
                   <input
                     className="form-check-input"
                     type="checkbox"
@@ -97,16 +132,18 @@ function CheckOutPage() {
                   <label className="form-check-label" htmlFor="Address-1">
                     Ship to a different address?
                   </label>
-                </div>
+                </div> */}
                 <div className="form-item">
                   <textarea
-                    name="text"
+                    name="orderNote"
                     className="form-control"
                     spellCheck="false"
                     cols={30}
                     rows={11}
                     placeholder="Oreder Notes (Optional)"
                     defaultValue={""}
+                    value={formData["orderNote"]}
+                    onChange={(e) => handleChange(e)}
                   />
                 </div>
               </div>
@@ -123,54 +160,24 @@ function CheckOutPage() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">
-                          <div className="d-flex align-items-center mt-2">
-                            <img
-                              src="img/vegetable-item-2.jpg"
-                              className="img-fluid rounded-circle"
-                              style={{ width: 90, height: 90 }}
-                              alt=""
-                            />
-                          </div>
-                        </th>
-                        <td className="py-5">Awesome Brocoli</td>
-                        <td className="py-5">$69.00</td>
-                        <td className="py-5">2</td>
-                        <td className="py-5">$138.00</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">
-                          <div className="d-flex align-items-center mt-2">
-                            <img
-                              src="img/vegetable-item-5.jpg"
-                              className="img-fluid rounded-circle"
-                              style={{ width: 90, height: 90 }}
-                              alt=""
-                            />
-                          </div>
-                        </th>
-                        <td className="py-5">Potatoes</td>
-                        <td className="py-5">$69.00</td>
-                        <td className="py-5">2</td>
-                        <td className="py-5">$138.00</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">
-                          <div className="d-flex align-items-center mt-2">
-                            <img
-                              src="img/vegetable-item-3.png"
-                              className="img-fluid rounded-circle"
-                              style={{ width: 90, height: 90 }}
-                              alt=""
-                            />
-                          </div>
-                        </th>
-                        <td className="py-5">Big Banana</td>
-                        <td className="py-5">$69.00</td>
-                        <td className="py-5">2</td>
-                        <td className="py-5">$138.00</td>
-                      </tr>
+                      {cartData.map((item, index) => (
+                        <tr>
+                          <th scope="row">
+                            <div className="d-flex align-items-center mt-2">
+                              <img
+                                src={item["fImage"]}
+                                className="img-fluid rounded-circle"
+                                style={{ width: 90, height: 90 }}
+                                alt=""
+                              />
+                            </div>
+                          </th>
+                          <td className="py-5">{item["fName"]}</td>
+                          <td className="py-5">${item["fPrice"]}</td>
+                          <td className="py-5">{item["quantity"]}</td>
+                          <td className="py-5">${item["fPrice"] * item["quantity"]}</td>
+                        </tr>
+                      ))}
                       <tr>
                         <th scope="row"></th>
                         <td className="py-5" />
@@ -180,7 +187,7 @@ function CheckOutPage() {
                         </td>
                         <td className="py-5">
                           <div className="py-3 border-bottom border-top">
-                            <p className="mb-0 text-dark">$414.00</p>
+                            <p className="mb-0 text-dark">${subTotal}</p>
                           </div>
                         </td>
                       </tr>
@@ -329,6 +336,7 @@ function CheckOutPage() {
                   <button
                     type="button"
                     className="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary"
+                    onClick={handleSubmit}
                   >
                     Place Order
                   </button>

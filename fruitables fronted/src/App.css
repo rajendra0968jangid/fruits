@@ -1,0 +1,16 @@
+.vesitable-item {
+    max-width: 300px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the items */
+  }
+  
+  .vesitable-img img {
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+  
+  .p-4.rounded-bottom {
+    font-size: 0.9rem; /* Adjust text size as needed */
+  }
+  
+
+  

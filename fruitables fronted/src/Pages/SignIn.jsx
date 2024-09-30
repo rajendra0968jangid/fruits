@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Footer from '../Components/Footer'
 
 function SignIn() {
+  const url = import.meta.env.VITE_BACKEND_URL
   let [formData, setFormData] = useState({ email: "", password: "" })
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -14,7 +15,7 @@ function SignIn() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     //api call
-    const respo = await fetch("http://localhost:8800/signin/user", {
+    const respo = await fetch(url+"/signin/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

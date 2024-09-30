@@ -11,6 +11,9 @@ import Contact from "./Pages/Contact";
 import Page404 from "./Pages/Page404";
 import Testimonial from "./Pages/Testimonial";
 import Shopdetail from "./Pages/Shopdetail";
+import Signup from "./Pages/Signup";
+import SignIn from "./Pages/SignIn";
+import Profile from "./Pages/Profile";
 function App() {
   return (
     <>
@@ -21,9 +24,13 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<CheckOut />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/404" element={<Page404 />} />
+          <Route path="/*" element={<Page404 />} />
           <Route path="/testimonial" element={<Testimonial />} />
           <Route path="/shopdetail" element={<Shopdetail />} />
+
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/signin" element={<SignIn />} />
         </Routes>
       </BrowserRouter>
     </>
