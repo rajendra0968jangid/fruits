@@ -9,7 +9,7 @@ function Cart() {
       {/* navbar */}
       <Navbar />
       {/* single page header */}
-      <SinglePageHeader one={{title:"Cart"}}/>
+      <SinglePageHeader />
       {/* <BannerSection /> */}
       {/* cartpage */}
       <CartPage />

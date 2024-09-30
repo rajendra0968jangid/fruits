@@ -1,6 +1,7 @@
 import React from "react";
 
 function CardFruitShop({one}) {
+    // console.log(one);
     
   return (
     <>
