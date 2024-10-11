@@ -1,12 +1,12 @@
 import React, { act, useEffect, useState } from "react";
 import CardFruitShop from "./CardFruitShop";
-
+import { Link } from "react-router-dom";
 function FruitShop() {
   let [cardData, setCardData] = useState([])
   useEffect(() => {
     const apiFetch = async () => {
       const url = import.meta.env.VITE_BACKEND_URL
-      const response = await fetch(url+"/product/alldata")
+      const response = await fetch(url + "/product/alldata")
       const jsonResponse = await response.json()
       setCardData(jsonResponse["data"])
     }
@@ -24,59 +24,59 @@ function FruitShop() {
               <div className="col-lg-8 text-end">
                 <ul className="nav nav-pills d-inline-flex text-center mb-5">
                   <li className="nav-item">
-                    <a
+                    <Link
                       className="d-flex m-2 py-2 bg-light rounded-pill active"
                       data-bs-toggle="pill"
-                      href="#tab-1"
+                      to="#tab-1"
                     >
                       <span className="text-dark" style={{ width: 130 }}>
                         All Products
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a
+                    <Link
                       className="d-flex py-2 m-2 bg-light rounded-pill"
                       data-bs-toggle="pill"
-                      href="#tab-2"
+                      to="#tab-2"
                     >
                       <span className="text-dark" style={{ width: 130 }}>
                         Vegetables
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a
+                    <Link
                       className="d-flex m-2 py-2 bg-light rounded-pill"
                       data-bs-toggle="pill"
-                      href="#tab-3"
+                      to="#tab-3"
                     >
                       <span className="text-dark" style={{ width: 130 }}>
                         Fruits
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a
+                    <Link
                       className="d-flex m-2 py-2 bg-light rounded-pill"
                       data-bs-toggle="pill"
-                      href="#tab-4"
+                      to="#tab-4"
                     >
                       <span className="text-dark" style={{ width: 130 }}>
                         Bread
                       </span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a
+                    <Link
                       className="d-flex m-2 py-2 bg-light rounded-pill"
                       data-bs-toggle="pill"
-                      href="#tab-5"
+                      to="#tab-5"
                     >
                       <span className="text-dark" style={{ width: 130 }}>
                         Meat
                       </span>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -104,7 +104,7 @@ function FruitShop() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-5.jpg"
+                              src="./img/fruite-item-5.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -125,13 +125,13 @@ function FruitShop() {
                               <p className="text-dark fs-5 fw-bold mb-0">
                                 $4.99 / kg
                               </p>
-                              <a
-                                href="#"
+                              <Link
+                                to="#"
                                 className="btn border border-secondary rounded-pill px-3 text-primary"
                               >
                                 <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
                                 Add to cart
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -140,7 +140,7 @@ function FruitShop() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-2.jpg"
+                              src="./img/fruite-item-2.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -161,14 +161,14 @@ function FruitShop() {
                               <p className="text-dark fs-5 fw-bold mb-0">
                                 $4.99 / kg
                               </p>
-                              <a
+                              <Link
 
-                                href="#"
+                                to="#"
                                 className="btn border border-secondary rounded-pill px-3 text-primary"
                               >
                                 <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
                                 Add to cart
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -185,7 +185,7 @@ function FruitShop() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-1.jpg"
+                              src="./img/fruite-item-1.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -206,13 +206,13 @@ function FruitShop() {
                               <p className="text-dark fs-5 fw-bold mb-0">
                                 $4.99 / kg
                               </p>
-                              <a
-                                href="#"
+                              <Link
+                                to="#"
                                 className="btn border border-secondary rounded-pill px-3 text-primary"
                               >
                                 <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
                                 Add to cart
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -221,7 +221,7 @@ function FruitShop() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-6.jpg"
+                              src="./img/fruite-item-6.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -242,13 +242,13 @@ function FruitShop() {
                               <p className="text-dark fs-5 fw-bold mb-0">
                                 $4.99 / kg
                               </p>
-                              <a
-                                href="#"
+                              <Link
+                                to="#"
                                 className="btn border border-secondary rounded-pill px-3 text-primary"
                               >
                                 <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
                                 Add to cart
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -265,7 +265,7 @@ function FruitShop() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-5.jpg"
+                              src="./img/fruite-item-5.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -286,13 +286,13 @@ function FruitShop() {
                               <p className="text-dark fs-5 fw-bold mb-0">
                                 $4.99 / kg
                               </p>
-                              <a
-                                href="#"
+                              <Link
+                                to="#"
                                 className="btn border border-secondary rounded-pill px-3 text-primary"
                               >
                                 <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
                                 Add to cart
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -301,7 +301,7 @@ function FruitShop() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-4.jpg"
+                              src="./img/fruite-item-4.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -322,13 +322,13 @@ function FruitShop() {
                               <p className="text-dark fs-5 fw-bold mb-0">
                                 $4.99 / kg
                               </p>
-                              <a
-                                href="#"
+                              <Link
+                                to="#"
                                 className="btn border border-secondary rounded-pill px-3 text-primary"
                               >
                                 <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
                                 Add to cart
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -345,7 +345,7 @@ function FruitShop() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-3.jpg"
+                              src="./img/fruite-item-3.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -366,13 +366,13 @@ function FruitShop() {
                               <p className="text-dark fs-5 fw-bold mb-0">
                                 $4.99 / kg
                               </p>
-                              <a
-                                href="#"
+                              <Link
+                                to="#"
                                 className="btn border border-secondary rounded-pill px-3 text-primary"
                               >
                                 <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
                                 Add to cart
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -381,7 +381,7 @@ function FruitShop() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-2.jpg"
+                              src="./img/fruite-item-2.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -402,13 +402,13 @@ function FruitShop() {
                               <p className="text-dark fs-5 fw-bold mb-0">
                                 $4.99 / kg
                               </p>
-                              <a
-                                href="#"
+                              <Link
+                                to="#"
                                 className="btn border border-secondary rounded-pill px-3 text-primary"
                               >
                                 <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
                                 Add to cart
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -417,7 +417,7 @@ function FruitShop() {
                         <div className="rounded position-relative fruite-item">
                           <div className="fruite-img">
                             <img
-                              src="img/fruite-item-1.jpg"
+                              src="./img/fruite-item-1.jpg"
                               className="img-fluid w-100 rounded-top"
                               alt=""
                             />
@@ -438,13 +438,13 @@ function FruitShop() {
                               <p className="text-dark fs-5 fw-bold mb-0">
                                 $4.99 / kg
                               </p>
-                              <a
-                                href="#"
+                              <Link
+                                to="#"
                                 className="btn border border-secondary rounded-pill px-3 text-primary"
                               >
                                 <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
                                 Add to cart
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const VegitableShop = () => {
   return (
     <div className="container-fluid vesitable py-5">
@@ -8,11 +8,11 @@ const VegitableShop = () => {
         <div id="vegetableCarousel" className="carousel slide">
           <div className="carousel-inner">
             {[
-              { src: "img/vegetable-item-6.jpg", name: "Parsely", price: "$4.99 / kg" },
-              { src: "img/vegetable-item-1.jpg", name: "Parsely", price: "$4.99 / kg" },
-              { src: "img/vegetable-item-3.png", name: "Banana", price: "$7.99 / kg" },
-              { src: "img/vegetable-item-4.jpg", name: "Bell Papper", price: "$7.99 / kg" },
-              { src: "img/vegetable-item-5.jpg", name: "Potatoes", price: "$7.99 / kg" }
+              { src: "./img/vegetable-item-6.jpg", name: "Parsely", price: "$4.99 / kg" },
+              { src: "./img/vegetable-item-1.jpg", name: "Parsely", price: "$4.99 / kg" },
+              { src: "./img/vegetable-item-3.png", name: "Banana", price: "$7.99 / kg" },
+              { src: "./img/vegetable-item-4.jpg", name: "Bell Papper", price: "$7.99 / kg" },
+              { src: "./img/vegetable-item-5.jpg", name: "Potatoes", price: "$7.99 / kg" }
             ].map((item, index) => (
               <div
                 key={index}
@@ -46,24 +46,24 @@ const VegitableShop = () => {
               </div>
             ))}
           </div>
-          <a
+          <Link
             className="carousel-control-prev"
-            href="#vegetableCarousel"
+            to="#vegetableCarousel"
             role="button"
             data-bs-slide="prev"
           >
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Previous</span>
-          </a>
-          <a
+          </Link>
+          <Link
             className="carousel-control-next"
-            href="#vegetableCarousel"
+            to="#vegetableCarousel"
             role="button"
             data-bs-slide="next"
           >
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Next</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

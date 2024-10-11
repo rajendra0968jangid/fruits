@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
-import CartPage from "../Components/CartPage";
+import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import SinglePageHeader from "../Components/SinglePageHeader";
 function Shopdetail() {
@@ -16,13 +16,13 @@ function Shopdetail() {
               <div className="row g-4">
                 <div className="col-lg-6">
                   <div className="border rounded">
-                    <a href="#">
+                    <Link to="#">
                       <img
-                        src="img/single-item.jpg"
+                        src="./img/single-item.jpg"
                         className="img-fluid rounded"
                         alt="Image"
                       />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="col-lg-6">
@@ -61,12 +61,12 @@ function Shopdetail() {
                       </button>
                     </div>
                   </div>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"
                   >
                     <i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart
-                  </a>
+                  </Link>
                 </div>
                 <div className="col-lg-12">
                   <nav>
@@ -170,7 +170,7 @@ function Shopdetail() {
                     >
                       <div className="d-flex">
                         <img
-                          src="img/avatar.jpg"
+                          src="./img/avatar.jpg"
                           className="img-fluid rounded-circle p-3"
                           style={{ width: 100, height: 100 }}
                           alt=""
@@ -198,7 +198,7 @@ function Shopdetail() {
                       </div>
                       <div className="d-flex">
                         <img
-                          src="img/avatar.jpg"
+                          src="./img/avatar.jpg"
                           className="img-fluid rounded-circle p-3"
                           style={{ width: 100, height: 100 }}
                           alt=""
@@ -287,13 +287,13 @@ function Shopdetail() {
                             <i className="fa fa-star" />
                           </div>
                         </div>
-                        <a
-                          href="#"
+                        <Link
+                          to="#"
                           className="btn border border-secondary text-primary rounded-pill px-4 py-3"
                         >
                           {" "}
                           Post Comment
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -319,46 +319,46 @@ function Shopdetail() {
                     <ul className="list-unstyled fruite-categorie">
                       <li>
                         <div className="d-flex justify-content-between fruite-name">
-                          <a href="#">
+                          <Link to="#">
                             <i className="fas fa-apple-alt me-2" />
                             Apples
-                          </a>
+                          </Link>
                           <span>(3)</span>
                         </div>
                       </li>
                       <li>
                         <div className="d-flex justify-content-between fruite-name">
-                          <a href="#">
+                          <Link to="#">
                             <i className="fas fa-apple-alt me-2" />
                             Oranges
-                          </a>
+                          </Link>
                           <span>(5)</span>
                         </div>
                       </li>
                       <li>
                         <div className="d-flex justify-content-between fruite-name">
-                          <a href="#">
+                          <Link to="#">
                             <i className="fas fa-apple-alt me-2" />
                             Strawbery
-                          </a>
+                          </Link>
                           <span>(2)</span>
                         </div>
                       </li>
                       <li>
                         <div className="d-flex justify-content-between fruite-name">
-                          <a href="#">
+                          <Link to="#">
                             <i className="fas fa-apple-alt me-2" />
                             Banana
-                          </a>
+                          </Link>
                           <span>(8)</span>
                         </div>
                       </li>
                       <li>
                         <div className="d-flex justify-content-between fruite-name">
-                          <a href="#">
+                          <Link to="#">
                             <i className="fas fa-apple-alt me-2" />
                             Pumpkin
-                          </a>
+                          </Link>
                           <span>(5)</span>
                         </div>
                       </li>
@@ -370,7 +370,7 @@ function Shopdetail() {
                   <div className="d-flex align-items-center justify-content-start">
                     <div className="rounded" style={{ width: 100, height: 100 }}>
                       <img
-                        src="img/featur-1.jpg"
+                        src="./img/featur-1.jpg"
                         className="img-fluid rounded"
                         alt="Image"
                       />
@@ -395,7 +395,7 @@ function Shopdetail() {
                   <div className="d-flex align-items-center justify-content-start">
                     <div className="rounded" style={{ width: 100, height: 100 }}>
                       <img
-                        src="img/featur-2.jpg"
+                        src="./img/featur-2.jpg"
                         className="img-fluid rounded"
                         alt=""
                       />
@@ -420,7 +420,7 @@ function Shopdetail() {
                   <div className="d-flex align-items-center justify-content-start">
                     <div className="rounded" style={{ width: 100, height: 100 }}>
                       <img
-                        src="img/featur-3.jpg"
+                        src="./img/featur-3.jpg"
                         className="img-fluid rounded"
                         alt=""
                       />
@@ -445,7 +445,7 @@ function Shopdetail() {
                   <div className="d-flex align-items-center justify-content-start">
                     <div className="rounded me-4" style={{ width: 100, height: 100 }}>
                       <img
-                        src="img/vegetable-item-4.jpg"
+                        src="./img/vegetable-item-4.jpg"
                         className="img-fluid rounded"
                         alt=""
                       />
@@ -470,7 +470,7 @@ function Shopdetail() {
                   <div className="d-flex align-items-center justify-content-start">
                     <div className="rounded me-4" style={{ width: 100, height: 100 }}>
                       <img
-                        src="img/vegetable-item-5.jpg"
+                        src="./img/vegetable-item-5.jpg"
                         className="img-fluid rounded"
                         alt=""
                       />
@@ -495,7 +495,7 @@ function Shopdetail() {
                   <div className="d-flex align-items-center justify-content-start">
                     <div className="rounded me-4" style={{ width: 100, height: 100 }}>
                       <img
-                        src="img/vegetable-item-6.jpg"
+                        src="./img/vegetable-item-6.jpg"
                         className="img-fluid rounded"
                         alt=""
                       />
@@ -518,18 +518,18 @@ function Shopdetail() {
                     </div>
                   </div>
                   <div className="d-flex justify-content-center my-4">
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="btn border border-secondary px-4 py-3 rounded-pill text-primary w-100"
                     >
                       Vew More
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="col-lg-12">
                   <div className="position-relative">
                     <img
-                      src="img/banner-fruits.jpg"
+                      src="./img/banner-fruits.jpg"
                       className="img-fluid w-100 rounded"
                       alt=""
                     />
@@ -552,7 +552,7 @@ function Shopdetail() {
               <div className="border border-primary rounded position-relative vesitable-item">
                 <div className="vesitable-img">
                   <img
-                    src="img/vegetable-item-6.jpg"
+                    src="./img/vegetable-item-6.jpg"
                     className="img-fluid w-100 rounded-top"
                     alt=""
                   />
@@ -571,20 +571,20 @@ function Shopdetail() {
                   </p>
                   <div className="d-flex justify-content-between flex-lg-wrap">
                     <p className="text-dark fs-5 fw-bold">$4.99 / kg</p>
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
                     >
                       <i className="fa fa-shopping-bag me-2 text-primary" /> Add to
                       cart
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="border border-primary rounded position-relative vesitable-item">
                 <div className="vesitable-img">
                   <img
-                    src="img/vegetable-item-1.jpg"
+                    src="./img/vegetable-item-1.jpg"
                     className="img-fluid w-100 rounded-top"
                     alt=""
                   />
@@ -603,20 +603,20 @@ function Shopdetail() {
                   </p>
                   <div className="d-flex justify-content-between flex-lg-wrap">
                     <p className="text-dark fs-5 fw-bold">$4.99 / kg</p>
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
                     >
                       <i className="fa fa-shopping-bag me-2 text-primary" /> Add to
                       cart
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="border border-primary rounded position-relative vesitable-item">
                 <div className="vesitable-img">
                   <img
-                    src="img/vegetable-item-3.png"
+                    src="./img/vegetable-item-3.png"
                     className="img-fluid w-100 rounded-top bg-light"
                     alt=""
                   />
@@ -635,20 +635,20 @@ function Shopdetail() {
                   </p>
                   <div className="d-flex justify-content-between flex-lg-wrap">
                     <p className="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
                     >
                       <i className="fa fa-shopping-bag me-2 text-primary" /> Add to
                       cart
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="border border-primary rounded position-relative vesitable-item">
                 <div className="vesitable-img">
                   <img
-                    src="img/vegetable-item-4.jpg"
+                    src="./img/vegetable-item-4.jpg"
                     className="img-fluid w-100 rounded-top"
                     alt=""
                   />
@@ -667,20 +667,20 @@ function Shopdetail() {
                   </p>
                   <div className="d-flex justify-content-between flex-lg-wrap">
                     <p className="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
                     >
                       <i className="fa fa-shopping-bag me-2 text-primary" /> Add to
                       cart
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="border border-primary rounded position-relative vesitable-item">
                 <div className="vesitable-img">
                   <img
-                    src="img/vegetable-item-5.jpg"
+                    src="./img/vegetable-item-5.jpg"
                     className="img-fluid w-100 rounded-top"
                     alt=""
                   />
@@ -699,20 +699,20 @@ function Shopdetail() {
                   </p>
                   <div className="d-flex justify-content-between flex-lg-wrap">
                     <p className="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
                     >
                       <i className="fa fa-shopping-bag me-2 text-primary" /> Add to
                       cart
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="border border-primary rounded position-relative vesitable-item">
                 <div className="vesitable-img">
                   <img
-                    src="img/vegetable-item-6.jpg"
+                    src="./img/vegetable-item-6.jpg"
                     className="img-fluid w-100 rounded-top"
                     alt=""
                   />
@@ -731,20 +731,20 @@ function Shopdetail() {
                   </p>
                   <div className="d-flex justify-content-between flex-lg-wrap">
                     <p className="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
                     >
                       <i className="fa fa-shopping-bag me-2 text-primary" /> Add to
                       cart
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="border border-primary rounded position-relative vesitable-item">
                 <div className="vesitable-img">
                   <img
-                    src="img/vegetable-item-5.jpg"
+                    src="./img/vegetable-item-5.jpg"
                     className="img-fluid w-100 rounded-top"
                     alt=""
                   />
@@ -763,20 +763,20 @@ function Shopdetail() {
                   </p>
                   <div className="d-flex justify-content-between flex-lg-wrap">
                     <p className="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
                     >
                       <i className="fa fa-shopping-bag me-2 text-primary" /> Add to
                       cart
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="border border-primary rounded position-relative vesitable-item">
                 <div className="vesitable-img">
                   <img
-                    src="img/vegetable-item-6.jpg"
+                    src="./img/vegetable-item-6.jpg"
                     className="img-fluid w-100 rounded-top"
                     alt=""
                   />
@@ -795,13 +795,13 @@ function Shopdetail() {
                   </p>
                   <div className="d-flex justify-content-between flex-lg-wrap">
                     <p className="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
                     >
                       <i className="fa fa-shopping-bag me-2 text-primary" /> Add to
                       cart
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

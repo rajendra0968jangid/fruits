@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Hero() {
   return (
     <>
@@ -35,23 +35,23 @@ function Hero() {
                 <div className="carousel-inner" role="listbox">
                   <div className="carousel-item active rounded">
                     <img
-                      src="img/hero-img-1.png"
+                      src="./img/hero-img-1.png"
                       className="img-fluid w-100 h-100 bg-secondary rounded"
                       alt="First slide"
                     />
-                    <a href="#" className="btn px-4 py-2 text-white rounded">
+                    <Link to="#" className="btn px-4 py-2 text-white rounded">
                       Fruites
-                    </a>
+                    </Link>
                   </div>
                   <div className="carousel-item rounded">
                     <img
-                      src="img/hero-img-2.jpg"
+                      src="./img/hero-img-2.jpg"
                       className="img-fluid w-100 h-100 rounded"
                       alt="Second slide"
                     />
-                    <a href="#" className="btn px-4 py-2 text-white rounded">
+                    <Link to="#" className="btn px-4 py-2 text-white rounded">
                       Vesitables
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <button

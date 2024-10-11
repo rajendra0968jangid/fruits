@@ -20,7 +20,7 @@ app.get('/product/alldata', async (req, res) => {
       "fName": "Raspberries",
       "fTitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       "fPrice": 4.99,
-      "fImage": "img/fruite-item-2.jpg"
+      "fImage": "./img/fruite-item-2.jpg"
     },
     {
 
@@ -29,7 +29,7 @@ app.get('/product/alldata', async (req, res) => {
       "fName": "Banana",
       "fTitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       "fPrice": 4.99,
-      "fImage": "img/fruite-item-3.jpg"
+      "fImage": "./img/fruite-item-3.jpg"
     },
     {
 
@@ -38,7 +38,7 @@ app.get('/product/alldata', async (req, res) => {
       "fName": "Raspberries",
       "fTitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       "fPrice": 4.99,
-      "fImage": "img/fruite-item-2.jpg"
+      "fImage": "./img/fruite-item-2.jpg"
     },
     {
 
@@ -47,7 +47,7 @@ app.get('/product/alldata', async (req, res) => {
       "fName": "Grapes",
       "fTitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       "fPrice": 4.99,
-      "fImage": "img/fruite-item-5.jpg"
+      "fImage": "./img/fruite-item-5.jpg"
     },
     {
 
@@ -56,7 +56,7 @@ app.get('/product/alldata', async (req, res) => {
       "fName": "Grapes",
       "fTitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       "fPrice": 4.99,
-      "fImage": "img/fruite-item-5.jpg"
+      "fImage": "./img/fruite-item-5.jpg"
     },
     {
 
@@ -65,7 +65,7 @@ app.get('/product/alldata', async (req, res) => {
       "fName": "Apricots",
       "fTitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       "fPrice": 4.99,
-      "fImage": "img/fruite-item-4.jpg"
+      "fImage": "./img/fruite-item-4.jpg"
     },
     {
 
@@ -74,7 +74,7 @@ app.get('/product/alldata', async (req, res) => {
       "fName": "Oranges",
       "fTitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       "fPrice": 4.99,
-      "fImage": "img/fruite-item-1.jpg"
+      "fImage": "./img/fruite-item-1.jpg"
     },
     {
 
@@ -83,7 +83,7 @@ app.get('/product/alldata', async (req, res) => {
       "fName": "Grapes",
       "fTitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       "fPrice": 5.99,
-      "fImage": "img/fruite-item-5.jpg"
+      "fImage": "./img/fruite-item-5.jpg"
     }
   ]
   res.status(200).json({ data: data });

@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+function CardFruitShop({ one }) {
 
-function CardFruitShop({one}) {
-    
   return (
     <>
       <div className="col-md-6 col-lg-4 col-xl-3">
@@ -26,13 +26,13 @@ function CardFruitShop({one}) {
             </p>
             <div className="d-flex justify-content-between flex-lg-wrap">
               <p className="text-dark fs-5 fw-bold mb-0">${one["fPrice"]} / kg</p>
-              <a
-                href="#"
+              <Link
+                to="#"
                 className="btn border border-secondary rounded-pill px-3 text-primary"
               >
                 <i className="fa fa-shopping-bag me-2 text-primary" /> Add to
                 cart
-              </a>
+              </Link>
             </div>
           </div>
         </div>

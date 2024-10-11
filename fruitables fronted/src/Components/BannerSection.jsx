@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function BannerSection() {
   return (
     <>
@@ -16,18 +16,18 @@ function BannerSection() {
                   The generated Lorem Ipsum is therefore always free from
                   repetition injected humour, or non-characteristic words etc.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   className="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5"
                 >
                   BUY
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-6">
               <div className="position-relative">
                 <img
-                  src="img/baner-1.png"
+                  src="./img/baner-1.png"
                   className="img-fluid w-100 rounded"
                   alt=""
                 />

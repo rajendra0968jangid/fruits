@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 function SinglePageHeader({ one }) {
   return (
     <>
@@ -6,10 +7,10 @@ function SinglePageHeader({ one }) {
         <h1 className="text-center text-white display-6">{one["title"]}</h1>
         {(one["title"] == "SignIn" || one["title"] == "Signup") ? "" : <ol className="breadcrumb justify-content-center mb-0">
           <li className="breadcrumb-item">
-            <a href="#">Home</a>
+            <Link to="#">Home</Link>
           </li>
           <li className="breadcrumb-item">
-            <a href="#">Pages</a>
+            <Link to="#">Pages</Link>
           </li>
           <li className="breadcrumb-item active text-white">{one["title"]}</li>
         </ol>}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 function FruitShopFilter() {
   const url = import.meta.env.VITE_BACKEND_URL
   let [cardData, setCardData] = useState([])
@@ -27,7 +27,7 @@ function FruitShopFilter() {
   }
   useEffect(() => {
     const apiFetch = async () => {
-      const response = await fetch(url+"/product/alldata")
+      const response = await fetch(url + "/product/alldata")
       const jsonResponse = await response.json()
       setCardData(jsonResponse["data"])
     }
@@ -92,46 +92,46 @@ function FruitShopFilter() {
                         <ul className="list-unstyled fruite-categorie">
                           <li>
                             <div className="d-flex justify-content-between fruite-name">
-                              <a href="#">
+                              <Link to="#">
                                 <i className="fas fa-apple-alt me-2" />
                                 Apples
-                              </a>
+                              </Link>
                               <span>(3)</span>
                             </div>
                           </li>
                           <li>
                             <div className="d-flex justify-content-between fruite-name">
-                              <a href="#">
+                              <Link to="#">
                                 <i className="fas fa-apple-alt me-2" />
                                 Oranges
-                              </a>
+                              </Link>
                               <span>(5)</span>
                             </div>
                           </li>
                           <li>
                             <div className="d-flex justify-content-between fruite-name">
-                              <a href="#">
+                              <Link to="#">
                                 <i className="fas fa-apple-alt me-2" />
                                 Strawbery
-                              </a>
+                              </Link>
                               <span>(2)</span>
                             </div>
                           </li>
                           <li>
                             <div className="d-flex justify-content-between fruite-name">
-                              <a href="#">
+                              <Link to="#">
                                 <i className="fas fa-apple-alt me-2" />
                                 Banana
-                              </a>
+                              </Link>
                               <span>(8)</span>
                             </div>
                           </li>
                           <li>
                             <div className="d-flex justify-content-between fruite-name">
-                              <a href="#">
+                              <Link to="#">
                                 <i className="fas fa-apple-alt me-2" />
                                 Pumpkin
-                              </a>
+                              </Link>
                               <span>(5)</span>
                             </div>
                           </li>
@@ -225,7 +225,7 @@ function FruitShopFilter() {
                           style={{ width: 100, height: 100 }}
                         >
                           <img
-                            src="img/featur-1.jpg"
+                            src="./img/featur-1.jpg"
                             className="img-fluid rounded"
                             alt=""
                           />
@@ -253,7 +253,7 @@ function FruitShopFilter() {
                           style={{ width: 100, height: 100 }}
                         >
                           <img
-                            src="img/featur-2.jpg"
+                            src="./img/featur-2.jpg"
                             className="img-fluid rounded"
                             alt=""
                           />
@@ -281,7 +281,7 @@ function FruitShopFilter() {
                           style={{ width: 100, height: 100 }}
                         >
                           <img
-                            src="img/featur-3.jpg"
+                            src="./img/featur-3.jpg"
                             className="img-fluid rounded"
                             alt=""
                           />
@@ -304,18 +304,18 @@ function FruitShopFilter() {
                         </div>
                       </div>
                       <div className="d-flex justify-content-center my-4">
-                        <a
-                          href="#"
+                        <Link
+                          to="#"
                           className="btn border border-secondary px-4 py-3 rounded-pill text-primary w-100"
                         >
                           Vew More
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="col-lg-12">
                       <div className="position-relative">
                         <img
-                          src="img/banner-fruits.jpg"
+                          src="./img/banner-fruits.jpg"
                           className="img-fluid w-100 rounded"
                           alt=""
                         />
@@ -362,14 +362,14 @@ function FruitShopFilter() {
                               <p className="text-dark fs-5 fw-bold mb-0">
                                 ${item["fPrice"]} / kg
                               </p>
-                              <a
-                                href="#"
+                              <Link
+                                to="#"
                                 className="btn border border-secondary rounded-pill px-3 text-primary"
                                 onClick={() => handleCart(item)}
                               >
                                 <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
                                 Add to cart
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -378,30 +378,30 @@ function FruitShopFilter() {
 
                     <div className="col-12">
                       <div className="pagination d-flex justify-content-center mt-5">
-                        <a href="#" className="rounded">
+                        <Link to="#" className="rounded">
                           «
-                        </a>
-                        <a href="#" className="active rounded">
+                        </Link>
+                        <Link to="#" className="active rounded">
                           1
-                        </a>
-                        <a href="#" className="rounded">
+                        </Link>
+                        <Link to="#" className="rounded">
                           2
-                        </a>
-                        <a href="#" className="rounded">
+                        </Link>
+                        <Link to="#" className="rounded">
                           3
-                        </a>
-                        <a href="#" className="rounded">
+                        </Link>
+                        <Link to="#" className="rounded">
                           4
-                        </a>
-                        <a href="#" className="rounded">
+                        </Link>
+                        <Link to="#" className="rounded">
                           5
-                        </a>
-                        <a href="#" className="rounded">
+                        </Link>
+                        <Link to="#" className="rounded">
                           6
-                        </a>
-                        <a href="#" className="rounded">
+                        </Link>
+                        <Link to="#" className="rounded">
                           »
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

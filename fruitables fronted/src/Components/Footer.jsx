@@ -1,5 +1,6 @@
 import React from "react";
 import CopyRight from "./CopyRight";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <>
@@ -11,10 +12,10 @@ function Footer() {
           >
             <div className="row g-4">
               <div className="col-lg-3">
-                <a href="#">
+                <Link to="#">
                   <h1 className="text-primary mb-0">Fruitables</h1>
                   <p className="text-secondary mb-0">Fresh products</p>
-                </a>
+                </Link>
               </div>
               <div className="col-lg-6">
                 <div className="position-relative mx-auto">
@@ -34,30 +35,30 @@ function Footer() {
               </div>
               <div className="col-lg-3">
                 <div className="d-flex justify-content-end pt-3">
-                  <a
+                  <Link
                     className="btn  btn-outline-secondary me-2 btn-md-square rounded-circle"
-                    href=""
+                    to=""
                   >
                     <i className="fab fa-twitter" />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                    href=""
+                    to=""
                   >
                     <i className="fab fa-facebook-f" />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="btn btn-outline-secondary me-2 btn-md-square rounded-circle"
-                    href=""
+                    to=""
                   >
                     <i className="fab fa-youtube" />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="btn btn-outline-secondary btn-md-square rounded-circle"
-                    href=""
+                    to=""
                   >
                     <i className="fab fa-linkedin-in" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -71,58 +72,58 @@ function Footer() {
                   popularised in the 1960s with the like Aldus PageMaker
                   including of Lorem Ipsum.
                 </p>
-                <a
-                  href=""
+                <Link
+                  to=""
                   className="btn border-secondary py-2 px-4 rounded-pill text-primary"
                 >
                   Read More
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
               <div className="d-flex flex-column text-start footer-item">
                 <h4 className="text-light mb-3">Shop Info</h4>
-                <a className="btn-link" href="">
+                <Link className="btn-link" to="">
                   About Us
-                </a>
-                <a className="btn-link" href="">
+                </Link>
+                <Link className="btn-link" to="">
                   Contact Us
-                </a>
-                <a className="btn-link" href="">
+                </Link>
+                <Link className="btn-link" to="">
                   Privacy Policy
-                </a>
-                <a className="btn-link" href="">
+                </Link>
+                <Link className="btn-link" to="">
                   Terms &amp; Condition
-                </a>
-                <a className="btn-link" href="">
+                </Link>
+                <Link className="btn-link" to="">
                   Return Policy
-                </a>
-                <a className="btn-link" href="">
+                </Link>
+                <Link className="btn-link" to="">
                   FAQs &amp; Help
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
               <div className="d-flex flex-column text-start footer-item">
                 <h4 className="text-light mb-3">Account</h4>
-                <a className="btn-link" href="">
+                <Link className="btn-link" to="">
                   My Account
-                </a>
-                <a className="btn-link" href="">
+                </Link>
+                <Link className="btn-link" to="">
                   Shop details
-                </a>
-                <a className="btn-link" href="">
+                </Link>
+                <Link className="btn-link" to="">
                   Shopping Cart
-                </a>
-                <a className="btn-link" href="">
+                </Link>
+                <Link className="btn-link" to="">
                   Wishlist
-                </a>
-                <a className="btn-link" href="">
+                </Link>
+                <Link className="btn-link" to="">
                   Order History
-                </a>
-                <a className="btn-link" href="">
+                </Link>
+                <Link className="btn-link" to="">
                   International Orders
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
@@ -132,13 +133,13 @@ function Footer() {
                 <p>Email: Example@gmail.com</p>
                 <p>Phone: +0123 4567 8910</p>
                 <p>Payment Accepted</p>
-                <img src="img/payment.png" className="img-fluid" alt="" />
+                <img src="./img/payment.png" className="img-fluid" alt="" />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <CopyRight/>
+      <CopyRight />
     </>
   );
 }

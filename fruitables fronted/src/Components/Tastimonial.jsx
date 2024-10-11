@@ -26,7 +26,7 @@ function Tastimonial() {
                 <div className="d-flex align-items-center flex-nowrap">
                   <div className="bg-secondary rounded">
                     <img
-                      src="img/testimonial-1.jpg"
+                      src="./img/testimonial-1.jpg"
                       className="img-fluid rounded"
                       style={{ width: 100, height: 100 }}
                       alt=""
@@ -62,7 +62,7 @@ function Tastimonial() {
                 <div className="d-flex align-items-center flex-nowrap">
                   <div className="bg-secondary rounded">
                     <img
-                      src="img/testimonial-1.jpg"
+                      src="./img/testimonial-1.jpg"
                       className="img-fluid rounded"
                       style={{ width: 100, height: 100 }}
                       alt=""
@@ -98,7 +98,7 @@ function Tastimonial() {
                 <div className="d-flex align-items-center flex-nowrap">
                   <div className="bg-secondary rounded">
                     <img
-                      src="img/testimonial-1.jpg"
+                      src="./img/testimonial-1.jpg"
                       className="img-fluid rounded"
                       style={{ width: 100, height: 100 }}
                       alt=""

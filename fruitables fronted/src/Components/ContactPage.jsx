@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 function ContactPage() {
   let [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const hanldleChange = async (e) => {
@@ -37,9 +37,9 @@ function ContactPage() {
                     working contact form with Ajax &amp; PHP in a few minutes.
                     Just copy and paste the files, add a little code and you're
                     done.{" "}
-                    <a href="https://htmlcodex.com/contact-form">
+                    <Link to="https://htmlcodex.com/contact-form">
                       Download Now
-                    </a>
+                    </Link>
                     .
                   </p>
                 </div>

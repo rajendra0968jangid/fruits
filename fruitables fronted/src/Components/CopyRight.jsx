@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function CopyRight() {
   return (
     <>
@@ -8,10 +8,10 @@ function CopyRight() {
           <div className="row">
             <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
               <span className="text-light">
-                <a href="#">
+                <Link to="#">
                   <i className="fas fa-copyright text-light me-2" />
                   Your Site Name
-                </a>
+                </Link>
                 , All right reserved.
               </span>
             </div>
@@ -20,13 +20,13 @@ function CopyRight() {
               {/*/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, *** /*/}
               {/*/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". *** /*/}
               Designed By{" "}
-              <a className="border-bottom" href="https://htmlcodex.com">
+              <Link className="border-bottom" to="https://htmlcodex.com">
                 HTML Codex
-              </a>{" "}
+              </Link>{" "}
               Distributed By{" "}
-              <a className="border-bottom" href="https://themewagon.com">
+              <Link className="border-bottom" to="https://themewagon.com">
                 ThemeWagon
-              </a>
+              </Link>
             </div>
           </div>
         </div>

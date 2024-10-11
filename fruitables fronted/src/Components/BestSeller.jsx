@@ -1,38 +1,38 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 function BestSeller() {
   let [sellerData, setSellerData] = useState([{
-    image: "img/best-product-1.jpg",
+    image: "./img/best-product-1.jpg",
     name: "Organic Tomato",
     price: 3.12,
     text_primary: ["text-primary", "text-primary", "text-primary", "text-primary", ""]
   }, {
-    image: "img/best-product-2.jpg",
+    image: "./img/best-product-2.jpg",
     name: "Organic Tomato",
     price: 3.12,
     text_primary: ["text-primary", "text-primary", "text-primary", "text-primary", ""]
   }, {
-    image: "img/best-product-3.jpg",
+    image: "./img/best-product-3.jpg",
     name: "Organic Tomato",
     price: 3.12,
     text_primary: ["text-primary", "text-primary", "text-primary", "text-primary", ""]
   }, {
-    image: "img/best-product-4.jpg",
+    image: "./img/best-product-4.jpg",
     name: "Organic Tomato",
     price: 3.12,
     text_primary: ["text-primary", "text-primary", "text-primary", "text-primary", ""]
   }, {
-    image: "img/best-product-5.jpg",
+    image: "./img/best-product-5.jpg",
     name: "Organic Tomato",
     price: 3.12,
     text_primary: ["text-primary", "text-primary", "text-primary", "text-primary", ""]
   }, {
-    image: "img/best-product-6.jpg",
+    image: "./img/best-product-6.jpg",
     name: "Organic Tomato",
     price: 3.12,
     text_primary: ["text-primary", "text-primary", "text-primary", "text-primary", ""]
   }])
-  
+
   return (
     <>
       <div className="container-fluid py-5">
@@ -58,22 +58,22 @@ function BestSeller() {
                       />
                     </div>
                     <div className="col-6">
-                      <a href="#" className="h5">
+                      <Link to="#" className="h5">
                         {item["name"]}
-                      </a>
+                      </Link>
                       <div className="d-flex my-3">
                         {item["text_primary"].map((item1, index1) => (
                           <i className={`fas fa-star ${item1}`} />
                         ))}
                       </div>
                       <h4 className="mb-3">{item["price"]} $</h4>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="btn border border-secondary rounded-pill px-3 text-primary"
                       >
                         <i className="fa fa-shopping-bag me-2 text-primary" /> Add
                         to cart
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -87,9 +87,9 @@ function BestSeller() {
                   alt=""
                 />
                 <div className="py-4">
-                  <a href="#" className="h5">
+                  <Link to="#" className="h5">
                     Organic Tomato
-                  </a>
+                  </Link>
                   <div className="d-flex my-3 justify-content-center">
                     <i className="fas fa-star text-primary" />
                     <i className="fas fa-star text-primary" />
@@ -98,13 +98,13 @@ function BestSeller() {
                     <i className="fas fa-star" />
                   </div>
                   <h4 className="mb-3">3.12 $</h4>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="btn border border-secondary rounded-pill px-3 text-primary"
                   >
                     <i className="fa fa-shopping-bag me-2 text-primary" /> Add
                     to cart
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -116,9 +116,9 @@ function BestSeller() {
                   alt=""
                 />
                 <div className="py-4">
-                  <a href="#" className="h5">
+                  <Link to="#" className="h5">
                     Organic Tomato
-                  </a>
+                  </Link>
                   <div className="d-flex my-3 justify-content-center">
                     <i className="fas fa-star text-primary" />
                     <i className="fas fa-star text-primary" />
@@ -127,13 +127,13 @@ function BestSeller() {
                     <i className="fas fa-star" />
                   </div>
                   <h4 className="mb-3">3.12 $</h4>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="btn border border-secondary rounded-pill px-3 text-primary"
                   >
                     <i className="fa fa-shopping-bag me-2 text-primary" /> Add
                     to cart
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -145,9 +145,9 @@ function BestSeller() {
                   alt=""
                 />
                 <div className="py-4">
-                  <a href="#" className="h5">
+                  <Link to="#" className="h5">
                     Organic Tomato
-                  </a>
+                  </Link>
                   <div className="d-flex my-3 justify-content-center">
                     <i className="fas fa-star text-primary" />
                     <i className="fas fa-star text-primary" />
@@ -156,13 +156,13 @@ function BestSeller() {
                     <i className="fas fa-star" />
                   </div>
                   <h4 className="mb-3">3.12 $</h4>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="btn border border-secondary rounded-pill px-3 text-primary"
                   >
                     <i className="fa fa-shopping-bag me-2 text-primary" /> Add
                     to cart
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -174,9 +174,9 @@ function BestSeller() {
                   alt=""
                 />
                 <div className="py-2">
-                  <a href="#" className="h5">
+                  <Link to="#" className="h5">
                     Organic Tomato
-                  </a>
+                  </Link>
                   <div className="d-flex my-3 justify-content-center">
                     <i className="fas fa-star text-primary" />
                     <i className="fas fa-star text-primary" />
@@ -185,13 +185,13 @@ function BestSeller() {
                     <i className="fas fa-star" />
                   </div>
                   <h4 className="mb-3">3.12 $</h4>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="btn border border-secondary rounded-pill px-3 text-primary"
                   >
                     <i className="fa fa-shopping-bag me-2 text-primary" /> Add
                     to cart
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div> */}
