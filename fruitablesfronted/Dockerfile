@@ -5,13 +5,13 @@ FROM node:18
 WORKDIR /usr/src/app  
 
 # Copy package.json and package-lock.json files to the working directory  
-COPY "fruitablesfronted/package*.json" ./
+COPY package*.json ./  
 
 # Install the dependencies  
 RUN npm install  
 
 # Copy the rest of the application code to the working directory  
-COPY "fruitables fronted/" ./
+COPY . .  
 
 # Expose the application port  
 EXPOSE 3000   
