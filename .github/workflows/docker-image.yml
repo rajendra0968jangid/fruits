@@ -1,4 +1,4 @@
-name: Build and Run Docker Image (Self-hosted)
+name: Build and Run Docker Image
 
 on:
   push:
@@ -10,39 +10,13 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      # Step 1: Checkout the code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Set up Docker on self-hosted runner
-      - name: Set up Docker
-        run: |
-          docker --version
-          docker info
-
-      # Step 3: Build the Docker image
       - name: Build Docker image for React project
         run: |
-          docker build -t my-local-image .
+          docker build -f "fruitables fronted/Dockerfile" -t my-local-image .
 
-      # Step 4: Run Docker container locally (optional, for testing locally)
       - name: Run Docker container locally
         run: |
           docker run -d --name my-react-container -p 5173:80 my-local-image
-
-      # Step 5: Check if container is running (optional)
-      - name: Check running containers
-        run: |
-          docker ps
-
-      # Step 6: Push to local Docker registry (no login needed if it's a local registry)
-      - name: Push Docker image to local registry
-        run: |
-          docker tag my-local-image localhost:5173/my-local-image
-          docker push localhost:5173/my-local-image
-
-      # Step 7: Clean up Docker containers (optional)
-      - name: Clean up Docker containers
-        run: |
-          docker stop my-react-container
-          docker rm my-react-container
