@@ -1,51 +1,48 @@
-name: Docker Image CI
+name: Build and Run Docker Image (Self-hosted)
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
-    # Check out the code
-    - uses: actions/checkout@v4
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    # Change to the project folder
-    - name: Navigate to project directory
-      working-directory: ./fruitables fronted
-      run: echo "Working directory set to ./fruitables fronted"
+      # Step 2: Set up Docker on self-hosted runner
+      - name: Set up Docker
+        run: |
+          docker --version
+          docker info
 
-    # Set up Node.js (to build the React app)
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+      # Step 3: Build the Docker image
+      - name: Build Docker image for React project
+        run: |
+          docker build -t my-local-image .
 
-    # Install dependencies and build the React app
-    - name: Install dependencies and build
-      working-directory: ./fruitables fronted
-      run: |
-        npm install
-        npm run build
+      # Step 4: Run Docker container locally (optional, for testing locally)
+      - name: Run Docker container locally
+        run: |
+          docker run -d --name my-react-container -p 5173:80 my-local-image
 
-    # Build the Docker image
-    - name: Build the Docker image
-      working-directory: ./fruitables fronted
-      run: |
-        docker build . --file Dockerfile --tag my-react-app:$(date +%s)
+      # Step 5: Check if container is running (optional)
+      - name: Check running containers
+        run: |
+          docker ps
 
-    # Push the Docker image (optional, requires Docker Hub or registry credentials)
-    - name: Log in to Docker Hub
-      uses: docker/login-action@v2
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+      # Step 6: Push to local Docker registry (no login needed if it's a local registry)
+      - name: Push Docker image to local registry
+        run: |
+          docker tag my-local-image localhost:5173/my-local-image
+          docker push localhost:5173/my-local-image
 
-    - name: Push the Docker image
-      run: |
-        docker tag my-react-app:$(date +%s) ${{ secrets.DOCKER_USERNAME }}/my-react-app:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/my-react-app:latest
+      # Step 7: Clean up Docker containers (optional)
+      - name: Clean up Docker containers
+        run: |
+          docker stop my-react-container
+          docker rm my-react-container
