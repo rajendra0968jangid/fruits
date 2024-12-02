@@ -1,0 +1,22 @@
+name: Build and Run Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image for React project
+        run: |
+          docker build -f "fruitables fronted/Dockerfile" -t my-local-image .
+
+      - name: Run Docker container locally
+        run: |
+          docker run -d --name my-react-container -p 5173:80 my-local-image
