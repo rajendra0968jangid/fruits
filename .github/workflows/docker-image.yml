@@ -22,4 +22,4 @@ jobs:
 
     - name: Run the Docker container
       run: |
-        docker run -d --name frontend -p 5173:5173 frontend
+        docker run -d --name frontend -p 80:5173 frontend
