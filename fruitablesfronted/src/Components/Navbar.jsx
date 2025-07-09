@@ -13,7 +13,7 @@ function Navbar() {
               <small className="me-3">
                 <i className="fas fa-map-marker-alt me-2 text-secondary" />{" "}
                 <Link to="#" className="text-white">
-                  123 Street, New York
+                  123 Street, India
                 </Link>
               </small>
               <small className="me-3">
